@@ -1,15 +1,69 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>AddressBook</title>
+    <title>Address Book Details</title>
 </head>
 <body>
-<h1 th:text="'AddressBook ' + ${addressBook.id}"></h1>
+<h1>Address Book #<span th:text="${addressBook.id}"></span></h1>
 
-<ul>
-    <li th:each="buddy : ${addressBook.buddies}"
-        th:text="${buddy.id} + '. ' + ${buddy.name} + ' Phone Number: ' + ${buddy.phoneNumber} + ''">
-    </li>
+<h2>Buddies</h2>
+<ul id="buddyList">
+    <li th:each="buddy : ${addressBook.buddies}" th:text="${buddy.name} + ' (' + ${buddy.phoneNumber} + ')'">Buddy Name</li>
 </ul>
+
+<h3>Add Buddy</h3>
+<form id="addBuddyForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required/>
+
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" name="phoneNumber" required/>
+
+    <button type="submit">Add Buddy</button>
+</form>
+
+<a href="/">Back to Home</a>
+
+<script>
+    document.getElementById('addBuddyForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submit
+
+        const addressBookId = /*[[${addressBook.id}]]*/ '0'; // Thymeleaf will replace this
+
+        const name = document.getElementById('name').value;
+        const phoneNumber = document.getElementById('phoneNumber').value;
+
+        fetch(`/api/addressbooks/${addressBookId}/buddies`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name: name, phoneNumber: phoneNumber })
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not OK');
+                }
+                return response.json();
+            })
+            .then(addressBook => {
+                // Clear and re-render buddy list
+                const buddyList = document.getElementById('buddyList');
+                buddyList.innerHTML = '';
+                addressBook.buddies.forEach(buddy => {
+                    const li = document.createElement('li');
+                    li.textContent = buddy.name + ' (' + buddy.phoneNumber + ')';
+                    buddyList.appendChild(li);
+                });
+
+                // Clear form inputs
+                document.getElementById('name').value = '';
+                document.getElementById('phoneNumber').value = '';
+            })
+            .catch(error => {
+                alert('Error adding buddy: ' + error.message);
+            });
+    });
+</script>
 </body>
 </html>
