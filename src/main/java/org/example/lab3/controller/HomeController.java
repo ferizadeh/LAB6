@@ -8,6 +8,6 @@ public class HomeController {
 
     @GetMapping("/")
     public String home() {
-        return "Address Book API is running! Try /api/addressbooks or use a REST client like Postman.";
+        return "Address Book API is running! Address Book API is running!";
     }
 }
