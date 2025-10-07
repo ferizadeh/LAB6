@@ -8,7 +8,8 @@
 
 <h2>Buddies</h2>
 <ul id="buddyList">
-    <li th:each="buddy : ${addressBook.buddies}" th:text="${buddy.name} + ' (' + ${buddy.phoneNumber} + ')'">Buddy Name</li>
+    <li th:each="buddy : ${addressBook.buddies}"
+        th:text="${buddy.name} + ' (' + ${buddy.phoneNumber} + ')'">Buddy Name</li>
 </ul>
 
 <h3>Add Buddy</h3>
@@ -24,16 +25,17 @@
 
 <a href="/">Back to Home</a>
 
-<script>
+<script th:inline="javascript">
+    /*<![CDATA[*/
     document.getElementById('addBuddyForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent default form submit
 
-        const addressBookId = /*[[${addressBook.id}]]*/ '0'; // Thymeleaf will replace this
+        const addressBookId = /*[[${addressBook.id}]]*/ 0;
 
         const name = document.getElementById('name').value;
         const phoneNumber = document.getElementById('phoneNumber').value;
 
-        fetch(`/api/addressbooks/${addressBookId}/buddies`, {
+        fetch('/api/addressbooks/' + addressBookId + '/buddies', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -64,6 +66,7 @@
                 alert('Error adding buddy: ' + error.message);
             });
     });
+    /*]]>*/
 </script>
 </body>
 </html>
