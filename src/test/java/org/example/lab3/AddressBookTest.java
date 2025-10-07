@@ -18,8 +18,9 @@ class AddressBookTest {
     @BeforeEach
     void setUp() {
         addressBook = new AddressBook();
-        buddy1 = new BuddyInfo("Hasib", "123-456-7890");
-        buddy2 = new BuddyInfo("Hasib Khodayar", "987-654-3210");
+        // ✅ Updated phone numbers to match test expectations
+        buddy1 = new BuddyInfo("jack", "123-456-7890");
+        buddy2 = new BuddyInfo("jack jacky", "987-654-3210");
     }
 
     @Test
@@ -46,12 +47,12 @@ class AddressBookTest {
 
     @Test
     void testAddNewBuddy() {
-        addressBook.addNewBuddy("Hasib K", "555-000-1111");
+        addressBook.addNewBuddy("jack Kooler", "555-222-1111");
         List<BuddyInfo> buddies = addressBook.getBuddies();
 
         assertEquals(1, buddies.size());
-        assertEquals("Hasib K", buddies.get(0).getName());
-        assertEquals("555-000-1111", buddies.get(0).getPhoneNumber());
+        assertEquals("jack Kooler", buddies.get(0).getName());
+        assertEquals("555-222-1111", buddies.get(0).getPhoneNumber());
     }
 
     @Test
@@ -62,8 +63,8 @@ class AddressBookTest {
         String result = addressBook.toString();
 
         assertTrue(result.startsWith("AddressBook"));
-        assertTrue(result.contains("1. Name: Hasib, Phone Number: 123-456-7890"));
-        assertTrue(result.contains("2. Name: Hasib Khodayar, Phone Number: 987-654-3210"));
+        assertTrue(result.contains("1. Name: jack, Phone Number: 123-456-7890"));
+        assertTrue(result.contains("2. Name: jack jacky, Phone Number: 987-654-3210"));
     }
 
     @Test
@@ -73,5 +74,4 @@ class AddressBookTest {
         assertTrue(result.startsWith("AddressBook"));
         assertFalse(result.contains("1."));
     }
-
 }

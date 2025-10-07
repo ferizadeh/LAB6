@@ -1,4 +1,3 @@
-/* Hasib Khodayar - 101225523*/
 package org.example.lab3.entities;
 
 import jakarta.persistence.*;

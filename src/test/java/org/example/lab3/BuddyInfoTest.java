@@ -12,19 +12,19 @@ class BuddyInfoTest {
 
     @BeforeEach
     void setUp() {
-        buddy = new BuddyInfo("Hasib", "123-456-7890");
+        buddy = new BuddyInfo("jack", "123-456-7890");
     }
 
     @Test
     void testConstructorAndGetters() {
-        assertEquals("Hasib", buddy.getName());
+        assertEquals("jack", buddy.getName());
         assertEquals("123-456-7890", buddy.getPhoneNumber());
     }
 
     @Test
     void testSetName() {
-        buddy.setName("Hasib Khodayar");
-        assertEquals("Hasib Khodayar", buddy.getName());
+        buddy.setName("jack jacky");
+        assertEquals("jack jacky", buddy.getName());
     }
 
     @Test
@@ -35,15 +35,15 @@ class BuddyInfoTest {
 
     @Test
     void testToString() {
-        String expected = "Name: Hasib, Phone Number: 123-456-7890";
+        String expected = "Name: jack, Phone Number: 123-456-7890";
         assertEquals(expected, buddy.toString());
     }
 
     @Test
     void testChangeValuesAndToString() {
-        buddy.setName("Hasib K");
+        buddy.setName("jack Kooler");
         buddy.setPhoneNumber("555-000-1111");
-        String expected = "Name: Hasib K, Phone Number: 555-000-1111";
+        String expected = "Name: jack Kooler, Phone Number: 555-000-1111";
         assertEquals(expected, buddy.toString());
     }
 }

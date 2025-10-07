@@ -9,7 +9,7 @@ POST http://localhost:8080/api/addressbooks/1/buddies
 Content-Type: application/json
 
 {
-  "name": "Hasib",
+  "name": "jack",
   "phoneNumber": "123-456"
 }
 
