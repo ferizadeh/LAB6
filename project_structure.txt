@@ -1,0 +1,124 @@
+Folder PATH listing for volume OS
+Volume serial number is 3E4B-CFD4
+C:.
+¦   .gitattributes
+¦   .gitignore
+¦   HELP.md
+¦   mvnw
+¦   mvnw.cmd
+¦   pom.xml
+¦   project_structure.txt
+¦   
++---.github
+¦   +---workflows
+¦           master_farzadlab6.yml
+¦           
++---.idea
+¦   ¦   .gitignore
+¦   ¦   compiler.xml
+¦   ¦   easycode.ignore
+¦   ¦   encodings.xml
+¦   ¦   jarRepositories.xml
+¦   ¦   misc.xml
+¦   ¦   vcs.xml
+¦   ¦   workspace.xml
+¦   ¦   
+¦   +---httpRequests
+¦           2025-09-28T165144.200.json
+¦           2025-09-28T165150.200.json
+¦           2025-09-28T165156.200.json
+¦           2025-09-28T220017.200.json
+¦           2025-09-28T220023.200.json
+¦           2025-09-28T220159.200.json
+¦           2025-09-28T220201.200.json
+¦           2025-09-28T220209.200.json
+¦           2025-09-28T220225.200.json
+¦           2025-09-28T220243.200.json
+¦           2025-09-28T220257.200.json
+¦           2025-09-28T220533.200.json
+¦           2025-09-28T220536.200.json
+¦           2025-09-28T220537.200.json
+¦           2025-09-28T220706.200.json
+¦           2025-09-28T220707.200.json
+¦           2025-09-29T145850.200.json
+¦           2025-09-29T145853.200.json
+¦           2025-09-29T145855.200.json
+¦           2025-09-29T150310.200.json
+¦           2025-09-29T150320.200.json
+¦           2025-09-29T150322.200.json
+¦           2025-09-29T150325.200.json
+¦           2025-09-29T150346.200.json
+¦           http-client.cookies
+¦           http-requests-log.http
+¦           
++---.mvn
+¦   +---wrapper
+¦           maven-wrapper.properties
+¦           
++---src
+¦   +---main
+¦   ¦   +---java
+¦   ¦   ¦   +---org
+¦   ¦   ¦       +---example
+¦   ¦   ¦           +---lab3
+¦   ¦   ¦               ¦   AddressBookViewController.java
+¦   ¦   ¦               ¦   Lab3Application.java
+¦   ¦   ¦               ¦   test.http
+¦   ¦   ¦               ¦   
+¦   ¦   ¦               +---controller
+¦   ¦   ¦               ¦       AddressBookController.java
+¦   ¦   ¦               ¦       HomeController.java
+¦   ¦   ¦               ¦       ViewController.java
+¦   ¦   ¦               ¦       
+¦   ¦   ¦               +---entities
+¦   ¦   ¦               ¦       AddressBook.java
+¦   ¦   ¦               ¦       BuddyInfo.java
+¦   ¦   ¦               ¦       
+¦   ¦   ¦               +---repository
+¦   ¦   ¦                       AddressBookRepository.java
+¦   ¦   ¦                       BuddyInfoRepository.java
+¦   ¦   ¦                       
+¦   ¦   +---resources
+¦   ¦       ¦   application.properties
+¦   ¦       ¦   
+¦   ¦       +---templates
+¦   ¦               addressbook.html
+¦   ¦               index.html
+¦   ¦               
+¦   +---test
+¦       +---java
+¦           +---org
+¦               +---example
+¦                   +---lab3
+¦                           AddressBookTest.java
+¦                           BuddyInfoTest.java
+¦                           
++---target
+    +---classes
+    ¦   ¦   application.properties
+    ¦   ¦   ViewController.class
+    ¦   ¦   
+    ¦   +---org
+    ¦   ¦   +---example
+    ¦   ¦       +---lab3
+    ¦   ¦           ¦   AddressBookViewController.class
+    ¦   ¦           ¦   Lab3Application.class
+    ¦   ¦           ¦   
+    ¦   ¦           +---controller
+    ¦   ¦           ¦       AddressBookController.class
+    ¦   ¦           ¦       HomeController.class
+    ¦   ¦           ¦       
+    ¦   ¦           +---entities
+    ¦   ¦           ¦       AddressBook.class
+    ¦   ¦           ¦       BuddyInfo.class
+    ¦   ¦           ¦       
+    ¦   ¦           +---repository
+    ¦   ¦                   AddressBookRepository.class
+    ¦   ¦                   BuddyInfoRepository.class
+    ¦   ¦                   
+    ¦   +---templates
+    ¦           addressbook.html
+    ¦           index.html
+    ¦           
+    +---generated-sources
+        +---annotations
